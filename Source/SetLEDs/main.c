@@ -165,6 +165,10 @@ void setKeyboard(IOHIDDeviceRef device, CFDictionaryRef keyboardDictionary,
               }
               CFRelease(newValue);
             }
+            if (verbose) {
+              printf("%s%s\n", stateSymbol[current][0] == '-' ? "+" : "-",
+                     ledNames[led - 1]);
+            }
           } else if (verbose) {
             printf("%s%s\n", stateSymbol[current], ledNames[led - 1]);
           }
